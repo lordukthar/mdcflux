@@ -1,0 +1,13 @@
+server:
+  port: 8088
+
+
+logging:
+  pattern:
+    console: "%X{context} %d{yyyy-MM-dd HH:mm:ss} %-5level %mdc %X{transaction.id} [%thread] %logger{36} - %msg %replace(%ex){'[\r\n]+', ' '} %nopex%n"
+  level:
+    root: WARN
+    # This one informs about the server port
+    "org.springframework.boot.web.embedded.netty.NettyWebServer": INFO
+    # More info from the app itself, good for prod debugging
+    "com.staxrt.tutorial": INFO
